@@ -2,15 +2,21 @@ import monkdata as m
 import dtree as d
 import drawtree as draw
 
-class TrainingSet:
+
+class DataSet:
     def __init__(self, dataset, name):
         self.dataset = dataset
         self.name = name
 
 
-trainingSets = [TrainingSet(m.monk1test, "monk1test"),
-                TrainingSet(m.monk2test, "monk2test"),
-                TrainingSet(m.monk3test, "monk3test")]
+testSets = [DataSet(m.monk1test, "monk1test"),
+            DataSet(m.monk2test, "monk2test"),
+            DataSet(m.monk3test, "monk3test")]
+
+trainingSets = [DataSet(m.monk1, "monk1"),
+                DataSet(m.monk2, "monk2"),
+                DataSet(m.monk3, "monk3")]
+
 
 """ Assignment 1 """
 def calculateEntropyOfTrainingSets():
@@ -24,7 +30,7 @@ def calculateAverageInformationGainOfTrainingSets():
     for set in trainingSets:
         printInformationGainOfDataset(set.dataset, set.name)
 
-
+""" Assignment 3 """
 def splitOnA5AndComputeInformationGainsOfSubsets():
     a5 = m.attributes[4]
 
@@ -40,14 +46,25 @@ def printInformationGainOfDataset(dataset, name):
         print(m.attributes[i].name + ": " + str(d.averageGain(dataset, m.attributes[i])))
     print("Best attribute is: " + str(d.bestAttribute(dataset, m.attributes)))
 
+
 def drawMonk1():
-    tree = d.buildTree(m.monk1test, m.attributes)
+    tree = d.buildTree(m.monk1, m.attributes)
     draw.drawTree(tree)
 
+
 def drawMonk2():
-    tree = d.buildTree(m.monk2test, m.attributes)
+    tree = d.buildTree(m.monk2, m.attributes)
     draw.drawTree(tree)
+
 
 """ Assignment 3 """
 def buildTreesAndComputePerformance():
-    pass
+    for i in range(len(trainingSets)):
+        tree = d.buildTree(trainingSets[i].dataset, m.attributes)
+        performanceOnTest = d.check(tree, testSets[i].dataset)
+        performanceOnTrain = d.check(tree, trainingSets[i].dataset)
+        print("Error of " + trainingSets[i].name + " on " + testSets[i].name + ": " + str(1 - performanceOnTest))
+        print("Error of " + trainingSets[i].name + " on " + trainingSets[i].name + ": " + str(1 - performanceOnTrain))
+        print("")
+
+buildTreesAndComputePerformance()
