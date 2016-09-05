@@ -43,3 +43,15 @@ a4: 0.00448288653959783
 a5: 0.34757342843558225
 a6: 0.0
 ```
+
+**Question:**
+
+Based on the results, which attribute should be used for splitting the examples at the root node?
+
+**Answer:**
+The attribute with the highest information gain.
+```
+a5 for monk1test
+a5 for monk2test
+a5 for monk3test
+```
