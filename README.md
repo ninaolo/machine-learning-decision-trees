@@ -19,29 +19,32 @@ Use the function averageGain (defined in dtree.py) to calculate the expected inf
 
 **Output:**
 ```
-Average information gain of monk1test:
-a1: 0.0
-a2: 0.0
-a3: 0.0
-a4: 0.0
-a5: 0.3112781244591327
-a6: 0.0
+Information gain of monk1test:
+A1: 0.0
+A2: 0.0
+A3: 0.0
+A4: 0.0
+A5: 0.3112781244591327
+A6: 0.0
+Best attribute is: A5
 
-Average information gain of monk2test:
-a1: 0.004305211728930836
-a2: 0.004305211728930836
-a3: 0.0006307506257382522
-a4: 0.004305211728930836
-a5: 0.005406547281522678
-a6: 0.0006307506257382522
+Information gain of monk2test:
+A1: 0.004305211728930836
+A2: 0.004305211728930836
+A3: 0.0006307506257382522
+A4: 0.004305211728930836
+A5: 0.005406547281522678
+A6: 0.0006307506257382522
+Best attribute is: A5
 
-Average information gain of monk3test:
-a1: -1.1102230246251565e-16
-a2: 0.3189814390160157
-a3: 0.0
-a4: 0.00448288653959783
-a5: 0.34757342843558225
-a6: 0.0
+Information gain of monk3test:
+A1: -1.1102230246251565e-16
+A2: 0.3189814390160157
+A3: 0.0
+A4: 0.00448288653959783
+A5: 0.34757342843558225
+A6: 0.0
+Best attribute is: A5
 ```
 
 **Question:**
