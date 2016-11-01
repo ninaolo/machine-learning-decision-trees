@@ -1,3 +1,6 @@
+# ML Decision Trees
+This is a lab assignment in a machine learning course at KTH. Assignment questions and corresponding answers are listed below.
+
 # Assignment 1
 
 **Task:**
